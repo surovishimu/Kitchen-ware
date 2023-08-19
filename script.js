@@ -22,17 +22,9 @@ function handleCLikBtn(target) {
     }
 
 
-    const discountPrice = document.getElementById('discount-price');
-    const finalPrice = document.getElementById('final-price');
-
     const goHomeBtn = document.getElementById('go-home');
     goHomeBtn.addEventListener('click', function () {
-        totalPriceCount.innerText = "0";
-        discountPrice.innerText = "0";
-        finalPrice.innerText = '0';
-
-        selectedItemContainer.innerText = "";
-
+        window.location.href = 'index.html';
     })
 }
 
@@ -45,14 +37,15 @@ couponButton.addEventListener('click', function () {
         discountPrice.innerText = ((20 / 100) * total).toFixed(2);
         finalPrice.innerText = (total - (discountPrice.innerText)).toFixed(2);
     }
-    else if (couponField.value !== "SELL200") {
+    else if (couponField.value !== "SELL200" && couponField.value !== "") {
         alert("please provide a valid coupon code ");
-        finalPrice.innerText = total;
+        finalPrice.innerText = total.toFixed(2);
     }
     else {
         discountPrice.innerText = "0";
 
     }
+    couponField.value = "";
 })
 
 
