@@ -54,7 +54,8 @@
                     <!-- card-1 -->
                     <div class="card bg-base-100 shadow-xl rounded-md">
                         <figure class="px-3 pt-3">
-                            <img src="./images/prod1.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40" />
+                            <img src="./images/prod1.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40"
+                                onclick="handleCLikBtn(this)" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <div class="rating">
@@ -71,7 +72,8 @@
                     <!-- card-2 -->
                     <div class="card bg-base-100 shadow-xl rounded-md">
                         <figure class="px-3 pt-3">
-                            <img src="./images/prod2.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40" />
+                            <img src="./images/prod2.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40"
+                                onclick="handleCLikBtn(this)" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <div class="rating">
@@ -88,7 +90,8 @@
                     <!-- card-3 -->
                     <div class="card bg-base-100 shadow-xl rounded-md">
                         <figure class="px-3 pt-3">
-                            <img src="./images/prod3.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40" />
+                            <img src="./images/prod3.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40"
+                                onclick="handleCLikBtn(this)" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <div class="rating">
@@ -112,7 +115,9 @@
                     <!-- card-1 -->
                     <div class="card bg-base-100 shadow-xl rounded-md">
                         <figure class="px-3 pt-3">
-                            <img src="./images/prod7.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40" />
+                            <img src="./images/prod7.png" alt="Shoes"
+                                class="rounded-md bg-slate-100 w-full h-40 cursor-pointer"
+                                onclick="handleCLikBtn(this)" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <div class="rating">
@@ -129,7 +134,8 @@
                     <!-- card-2 -->
                     <div class="card bg-base-100 shadow-xl rounded-md">
                         <figure class="px-3 pt-3">
-                            <img src="./images/prod8.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40" />
+                            <img src="./images/prod8.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40"
+                                onclick="handleCLikBtn(this)" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <div class="rating">
@@ -146,7 +152,8 @@
                     <!-- card-3 -->
                     <div class="card bg-base-100 shadow-xl rounded-md">
                         <figure class="px-3 pt-3">
-                            <img src="./images/prod9.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40" />
+                            <img src="./images/prod9.png" alt="Shoes" class="rounded-md bg-slate-100 w-full h-40"
+                                onclick="handleCLikBtn(this)" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <div class="rating">
@@ -163,22 +170,41 @@
                 </div>
                 <!-- Furniture end -->
             </div>
-            <div class="">
-                <div class="border-2 mb-4">
-                    <h1>Have coupon?</h1>
-                    <input type="text" placeholder="Coupon code"> <button>Apply</button>
-                </div>
-                <div class="border-2">
-                    <div>
-                        <ol>
+            <div class="text-left md:text-center lg:text-left text-center">
+                <div class="mb-4 mt-12 bg-base-100 shadow-xl rounded-md p-10 ">
+                    <h1 class="text-black text-lg font-semibold mb-3">Have coupon?</h1>
+                    <input type="text" placeholder="Coupon code"
+                        class="rounded-l-lg outline-none lg:w-40 md:w-40 w-32 h-11 border-2 pl-2"> <button
+                        class="bg-[#E527B2] text-white rounded-r-lg lg:w-20 md:w-20 w-14 h-11 relative right-2 bottom-0.5 ">Apply</button>
 
-                        </ol>
+                </div>
+                <div class="bg-base-100 shadow-xl rounded-md p-10  ">
+                    <div id="selected-items">
+
                     </div>
                     <hr>
-                    <h2>Total Price: <span>0</span>TK</h2>
-                    <h2>Discount: <span>0</span>TK</h2>
-                    <h2>Total: <span>0</span>TK</h2>
-                    <button>Make Purchase</button>
+                    <div>
+                        <h2 class="mb-3 mt-4">Total Price: <span class="text-slate-400"><span
+                                    id="total">0</span>TK</span>
+                        </h2>
+                        <h2 class="mb-3">Discount: <span class="text-slate-400"><span>0</span>TK</span></h2>
+                        <h2 class="mb-3">Total: <span class="text-slate-400"><span>0</span>TK</span></h2>
+
+                        <button id="purches-btn" disabled class="btn bg-[#E527B2] h-11 w-full rounded-sm  text-white"
+                            onclick="my_modal_1.showModal()">Make
+                            Purchase</button>
+                        <dialog id="my_modal_1" class="modal">
+                            <form method="dialog" class="modal-box text-center">
+                                <img class="mx-auto" src="./images/congo.png" alt="">
+                                <h3 class="font-bold text-2xl ">Congratulations</h3>
+                                <p class="py-4 text-sm text-slate-400">Your Purchase the product</p>
+                                <div class="modal-action ">
+
+                                    <button id="go-home" class="btn mx-auto bg-[#E527B2] hover:bg-[#E527B2]  text-white">Go Home</button>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
                 </div>
             </div>
         </section>
