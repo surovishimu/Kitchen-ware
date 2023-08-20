@@ -1,37 +1,39 @@
 let total = 0;
 
 function handleCLikBtn(target) {
+    // get the item list area
     const selectedItemContainer = document.getElementById("selected-items");
     const itemName = target.parentNode.parentNode.childNodes[3].childNodes[3].innerText;
+    // set the item to the list
     const p = document.createElement("p");
     const count = selectedItemContainer.childElementCount;
     p.innerHTML = `${count + 1} . ${itemName}`
     selectedItemContainer.appendChild(p);
+    // get the price of item
     const price = target.parentNode.parentNode.childNodes[3].childNodes[5].innerText.split(" ")[0];
+    // set the price to total field and final total field
     total = parseInt(total) + parseInt(price);
-    const totalPriceCount = document.getElementById("total");
-    totalPriceCount.innerText = total.toFixed(2);
+    priceField("total", total.toFixed(2));
+    priceField('final-price', total.toFixed(2));
 
-    const finalPrice = document.getElementById('final-price');
-    finalPrice.innerText = total.toFixed(2);
-    
+    // button enable
     const purchesButton = document.getElementById('purches-btn');
     if (total > 0) {
         purchesButton.removeAttribute('disabled');
     }
 
     const couponButton = document.getElementById('coupon-btn');
-    if (total > 200) {
+    if (total >= 200) {
         couponButton.removeAttribute('disabled');
     }
 
-
-    const goHomeBtn = document.getElementById('go-home');
-    goHomeBtn.addEventListener('click', function () {
-        window.location.href = 'index.html';
-    })
 }
-
+// Modal button click and return to go home again
+const goHomeBtn = document.getElementById('go-home');
+goHomeBtn.addEventListener('click', function () {
+    window.location.href = 'index.html';
+})
+// get the coupon button and apply coupon code
 const couponButton = document.getElementById('coupon-btn');
 couponButton.addEventListener('click', function () {
     const couponField = document.getElementById('coupon-field');
@@ -51,7 +53,11 @@ couponButton.addEventListener('click', function () {
     }
     couponField.value = "";
 })
-
-
+// get all the price field value
+function priceField(priceFieldId, value) {
+    const priceField = document.getElementById(priceFieldId);
+    priceField.innerText = value;
+    return priceField;
+}
 
 
