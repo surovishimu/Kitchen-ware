@@ -3,14 +3,14 @@ let total = 0;
 function handleCLikBtn(target) {
     // get the item list area
     const selectedItemContainer = document.getElementById("selected-items");
-    const itemName = target.parentNode.parentNode.childNodes[3].childNodes[3].innerText;
+    const itemName = target.childNodes[3].childNodes[3].innerText;
     // set the item to the list
     const p = document.createElement("p");
     const count = selectedItemContainer.childElementCount;
     p.innerHTML = `${count + 1} . ${itemName}`
     selectedItemContainer.appendChild(p);
     // get the price of item
-    const price = target.parentNode.parentNode.childNodes[3].childNodes[5].innerText.split(" ")[0];
+    const price = target.childNodes[3].childNodes[5].innerText.split(" ")[0];
     // set the price to total field and final total field
     total = parseInt(total) + parseInt(price);
     priceField("total", total.toFixed(2));
