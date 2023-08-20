@@ -11,6 +11,10 @@ function handleCLikBtn(target) {
     total = parseInt(total) + parseInt(price);
     const totalPriceCount = document.getElementById("total");
     totalPriceCount.innerText = total.toFixed(2);
+
+    const finalPrice = document.getElementById('final-price');
+    finalPrice.innerText = total.toFixed(2);
+    
     const purchesButton = document.getElementById('purches-btn');
     if (total > 0) {
         purchesButton.removeAttribute('disabled');
